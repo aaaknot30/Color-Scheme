@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background: #111;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.container {
+    width: 550px;
+    margin: 15px auto;
+}
+
+.header {
+    background: white;
+    padding: 10px;
+}
+#color--form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+#color--pick {
+    width: 55px;
+    height: 37px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 0.5px solid #313131;
+}
+
+/* #color--scheme {
+    padding: 6px 110px 6px 10px;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+} */
+
+#btn {
+    padding: 11px 15px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.palette {
+    display: flex;
+}
+
+.color {
+    width: 110px;
+    text-align: center;
+    padding: 220px 0px;
+    font-size: 14px;
+}
+
+.color--name {
+    padding: 15px 0px;
+    text-align: center;
+    background: #FFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #2B283A;
+}
+
+
+.select {
+    width: 300px;
+    position: relative;
+  }
+
+.select__input {
+    border: 1px solid #d1d5db;
+    box-shadow: 0px 1px 2px rgba(197, 20, 20, 0.05);
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 2.625em;
+    height: 2.625em;
+    padding: 2px 0.75em;
+    margin-top: 1px;
+    color: #111827;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+}
+
+.select__input svg {
+    position: absolute;
+    right: 0.75em;
+}
+
+.select__options {
+    background-color: #fff;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 4px);
+    visibility: hidden;
+    opacity: 0; 
+    margin: 0;
+    z-index: 10;
+}
+  .select__item {
+      font-size: 14px;
+      line-height: 2em;
+      color: #111827;
+      padding: 0.5em 0.75em;
+      list-style: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+  }
+
+  .select__item:hover,
+  .select__item:focus {
+      background-color: #f6f4f5;
+  }
+
+  .select__item .svg {
+      position: absolute;
+      right: 0.75em;
+  }
