@@ -10,6 +10,7 @@ function fetchColors() {
         .then(res => res.json())
         .then(data => {
             parse(data)
+            renderBody()
         })
 }
 fetchColors()
@@ -20,7 +21,6 @@ function parse(data) {
     data.colors.forEach((item) => {
         colorsArray.push(item.name.closest_named_hex)
     })
-    render()
 }
 
 // --------- Step 3. Render dropdown menu ---------
@@ -49,19 +49,19 @@ function renderDropDown() {
 renderDropDown()
 
 // Step 4. ---------- Render color palette ------------------
-function render() {
-    document.getElementById("color1").style.background = colorsArray[0]
-    document.getElementById("color1--name").innerHTML = colorsArray[0]
-    document.getElementById("color2").style.background = colorsArray[1]
-    document.getElementById("color2--name").innerHTML = colorsArray[1]
-    document.getElementById("color3").style.background = colorsArray[2]
-    document.getElementById("color3--name").innerHTML = colorsArray[2]
-    document.getElementById("color4").style.background = colorsArray[3]
-    document.getElementById("color4--name").innerHTML = colorsArray[3]
-    document.getElementById("color5").style.background = colorsArray[4]
-    document.getElementById("color5--name").innerHTML = colorsArray[4]
+function renderBody() {
+    let html = ""
+    for (let i=0; i<5; i++) {
+        html +=
+        `<div id="rect${i}">
+            <div class="color" id="color${i}" style="background: ${colorsArray[i]}"></div>
+            <div class="color--name" id="color${i}--name">${colorsArray[i]}</div>
+        </div>`
+    }
+    document.getElementById("palette").innerHTML = html
     colorsArray = []
 }
+
 
 // Step 5. ---------- Define dropdown toggle ------------------
 function toggleDropDown(drop) {
