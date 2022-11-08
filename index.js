@@ -25,7 +25,7 @@ function parse(data) {
 
 // --------- Step 3. Render dropdown menu ---------
 let selectedColor = "Monochrome"
-let checkMark = `<img class="svg" src="checkmark_trans.png">`
+let checkMark = `<img class="svg" src="/images/checkmark_trans.png">`
 function renderDropDown() {
     let htmlData = ""
     data.forEach((item) => {
@@ -39,7 +39,7 @@ function renderDropDown() {
         `<div id="select" class="select">
             <div id="select__input" class="select__input">
                 <span id="select__input">${selectedColor}</span>   
-                <img id="select__input" class="svg" src="down_arrow_trans.png">
+                <img id="select__input" class="svg" src="/images/down_arrow_trans.png">
             </div> 
             <ul id="select__options" class="select__options">
             ${htmlData}
