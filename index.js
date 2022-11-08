@@ -85,8 +85,24 @@ document.addEventListener("click", (e) => {
         colorScheme = e.target.dataset.value
         renderDropDown()
         fetchColors()
+    } else if (e.target.id.indexOf("color") >= 0 && e.target.id.indexOf("--") < 0) {
+        let id = e.target.id + "--name"
+        let copiedColor = document.getElementById(id).innerHTML
+        navigator.clipboard.writeText(copiedColor)
+        copied(e.target.id, copiedColor)
     }
+
 })
+
+function copied(id, copiedColor) {
+    let copyColor = id + "--copy"
+    document.getElementById("copied--message").innerHTML = "<strong>" + copiedColor + "</strong> copied to clipboard"
+    document.getElementById("copied--message").style.visibility = "visible"
+
+    setTimeout( () => {
+        document.getElementById("copied--message").style.visibility = "hidden"
+    }, 1700)
+}
 
 document.getElementById("btn").addEventListener("click", function (e) {
     e.preventDefault();
