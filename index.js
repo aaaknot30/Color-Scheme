@@ -64,34 +64,37 @@ function renderBody() {
 
 
 // Step 5. ---------- Define dropdown toggle ------------------
+let state = false
 function toggleDropDown(drop) {
-    //console.log(drop)
     if (drop) {
         document.getElementById("select__options").style.visibility = "visible"
         document.getElementById("select__options").style.opacity = "1"
+        state = true
     } else {
         document.getElementById("select__options").style.visibility = "hidden"
         document.getElementById("select__options").style.opacity = "0"
+        state = false
     }
 }
 
 // Step 6. ---------- Define event listeners ------------------
 document.addEventListener("click", (e) => {
     if (e.target.id == "select__input") {
-        toggleDropDown(true)
+        state ? toggleDropDown(false) : toggleDropDown(true)
     } else if (e.target.id == "option") {
         toggleDropDown(false)
         selectedColor = e.target.dataset.key
         colorScheme = e.target.dataset.value
         renderDropDown()
         fetchColors()
+        
     } else if (e.target.id.indexOf("color") >= 0 && e.target.id.indexOf("--") < 0) {
         let id = e.target.id + "--name"
         let copiedColor = document.getElementById(id).innerHTML
         navigator.clipboard.writeText(copiedColor)
         copied(e.target.id, copiedColor)
     }
-
+    console.log(state)
 })
 
 function copied(id, copiedColor) {
@@ -108,6 +111,11 @@ document.getElementById("btn").addEventListener("click", function (e) {
     e.preventDefault();
     fetchColors()
 })
+
+document.getElementById("color--pick").addEventListener("change", function (e) {
+    fetchColors()
+})
+
 
 
 
