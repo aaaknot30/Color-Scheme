@@ -62,7 +62,7 @@ body {
 .color {
     width: 110px;
     text-align: center;
-    padding: 220px 0px;
+    padding: 200px 0px;
     font-size: 14px;
 }
 
@@ -142,4 +142,24 @@ body {
   .select__item .svg {
       position: absolute;
       right: 0.75em;
+  }
+
+  #color1--copy,
+  #color2--copy,
+  #color3--copy,
+  #color4--copy,
+  #color5--copy {
+    visibility: hidden;
+    font-size: 12px;
+  }
+
+  #copied--message {
+    position: relative;
+    top: -380px;
+    left: 175px;
+    visibility: hidden;
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-size: 12px;
   }
